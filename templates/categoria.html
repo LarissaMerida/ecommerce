@@ -1,5 +1,4 @@
 {% extends 'base.html' %} 
-{% load static %}
 {% block conteudo  %}
 
     <section class="container mt-4">
@@ -9,7 +8,7 @@
             <a href="{% url 'ver_item' item.id %}">
                 <div class="col">
                     <div class="card">
-                        <img src="{% static item.imagem_set.first.arquivo_imagem  %}" class="card-img-top" alt="item.imagem_set.first.titulo">
+                        <img src="/media/{{ item.imagem_set.first.arquivo_imagem }}" class="card-img-top" alt="item.imagem_set.first.titulo">
                         <div class="card-body">
                         <h5 class="card-title">{{ item.titulo }}</h5>
                         <p class="card-text"><b>R$ {{ item.preco }}</b></p>
