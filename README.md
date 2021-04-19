@@ -7,7 +7,7 @@
 
 #### Instruções de configuração
 
-- Clone o repositório dehttps://github.com/LarissaMerida/ecommerce.git
+- Clone o repositório de https://github.com/LarissaMerida/ecommerce.git
 - Após abrir o terminal na raiz do projeto , realize os seguintes passos:
   - Para instalar as dependências: pipenv install
   - Após instalar as dependências, pode ativar o ambiente com o comando *pipenv shell*
