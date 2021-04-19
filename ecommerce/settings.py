@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'banner.apps.BannerConfig',
+    'categoria.apps.CategoriaConfig',
     'conta.apps.ContaConfig',
     'imagem.apps.ImagemConfig',
     'item.apps.ItemConfig',

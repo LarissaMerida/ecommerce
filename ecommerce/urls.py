@@ -20,6 +20,8 @@ from django.conf.urls.static import static
 
 from conta.views import *
 from item.views import *
+from categoria.views import *
+from pedido.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +29,9 @@ urlpatterns = [
     path('', index, name='home'),
     path('item/<id>', ver_item, name='ver_item'),
     path('cadastro/', cadastro, name='cadastro'),
+    path('compra/<id>', compra, name='compra'),
+    path('categoria/<id>', categoria, name='categoria'),
+    path('pesquisa/', pesquisa, name='pesquisa'),
     path('', include('django.contrib.auth.urls')),
 ]
 

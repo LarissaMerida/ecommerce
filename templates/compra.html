@@ -1,0 +1,76 @@
+{% extends 'base.html' %} 
+
+{% block conteudo  %}
+<section class="container">
+    <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-primary">Seu carrinho</span>
+            <span class="badge bg-primary rounded-pill">1</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-sm">
+              <div>
+                <h6 class="my-0">Produto</h6>
+                <small class="text-muted">{{ item.titulo }}</small>
+              </div>
+              <span class="text-muted">R$ {{ item.preco }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-success">
+                <h6 class="my-0">Código</h6>
+                <small>EXAMPLECODE</small>
+              </div>
+              <span class="text-success">−R$5</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Total</span>
+              <strong>R$ {{ item.preco }}</strong>
+            </li>
+          </ul>
+    
+          <form class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Código promocional">
+              <button type="submit" class="btn btn-secondary">Adicionar código</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <form class="needs-validation" novalidate="">
+            <div class="row g-3">
+             
+                <h4 class="mb-3">Pagamento</h4>
+        
+                <div class="my-3">
+                    {% for pagamento in pagamentos %}
+                    <div class="form-check">
+                        <input id="{{ pagamento.id }}" name="metodo" type="radio" class="form-check-input" checked="" required="">
+                        <label class="form-check-label" for="{{ pagamento.id }}">{{ pagamento.tipo }}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+    
+                
+                <hr class="my-4">
+                <h4 class="mb-3">Forma de entrega</h4>
+        
+                <div class="my-3">
+                    {% for entrega in entregas %}
+                    <div class="form-check">
+                        <input id="{{ entrega.id }}" name="entrega" type="radio" class="form-check-input" checked="" required="">
+                        <label class="form-check-label" for="{{ entrega.id }}">{{ entrega.tipo }}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+    
+            <hr class="my-4">
+    
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Finalizar compra</button>
+          </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

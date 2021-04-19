@@ -13,10 +13,10 @@
                 Login do Cliente
             </h3>
             {% for message in messages %}
-                <strong class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                </strong>
-            {% endfor %}
+            <strong class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </strong>
+        {% endfor %}
             <form method="post" action="{% url 'login' %}" class="mt-3">
                 {% csrf_token %}
                 <div class="input-group mb-3">
