@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-# import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,13 +21,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY='django-insecure-$wyp+u%l=l5ftkbr)4_c#g#0zy^ubm4jn&mgq0#e#=u7^i^bvy'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+# SECRET_KEY='django-insecure-$wyp+u%l=l5ftkbr)4_c#g#0zy^ubm4jn&mgq0#e#=u7^i^bvy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG') == True
-DEBUG = True
-ALLOWED_HOSTS = ['https://lpsecommerce.herokuapp.com/', '*']
+DEBUG = os.environ.get('DEBUG') == True
+# DEBUG = True
+ALLOWED_HOSTS = ['https://lpsecommerce.herokuapp.com/']
 
 
 # Application definition
@@ -145,4 +145,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = '/'
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
