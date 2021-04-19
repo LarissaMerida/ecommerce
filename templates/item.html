@@ -1,0 +1,63 @@
+{% extends 'base.html' %} 
+
+{% block conteudo  %}
+    <section class="container ">
+        <div class="row">
+            <div class="col-5 mt-5">
+                <div id="carouselExampleFade" class="carousel  carousel-dark " data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="/media/{{ item.imagem_set.first.arquivo_imagem }}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/media/{{ item.imagem_set.all.4.arquivo_imagem }}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                          {{ item.video_set.all.first.arquivo_video| safe }}
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/media/{{ item.imagem_set.all.2.arquivo_imagem }}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/media/{{ item.imagem_set.all.3.arquivo_imagem }}" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="/media/{{ item.imagem_set.all.4.arquivo_imagem }}" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-4">
+                <h4>
+                    <b>
+                        {{ item.titulo }}
+                    </b>
+                </h4>
+                <p>
+                    {{ item.descricao | safe }}
+                </p>
+            </div>
+            <div class="col-3 " style="padding-top: 25%">
+                <div class="text-center">
+                    <h3>
+                        <b >
+                           R$ {{ item.preco }}
+                        </b>
+                    </h3>
+                    <div class="d-grid gap-2  mx-auto">
+                        <button class="btn btn-danger" type="button">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}
